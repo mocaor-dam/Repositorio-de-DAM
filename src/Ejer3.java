@@ -5,8 +5,8 @@ public class Ejer3 {
         System.out.println("Introduce cuantos numeros vas a introducir: ");
         Scanner sc = new Scanner(System.in);
         int num1 = sc.nextInt();
+        System.out.println("Introduce otro numero mayor que 0: ");
         while (num1 <= 0) {
-            System.out.println("Introduce otro numero mayor que 0: ");
         }
         for (int i = 0; i < num1; i++) {
             System.out.println("Introduce un numero: ");
