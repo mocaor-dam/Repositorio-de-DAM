@@ -11,7 +11,7 @@ public class Ejer4 {
             num = sc.nextInt();
         }
         int suma = 0;
-        for (int i = 1; i < num ; i++) {
+        for (int i = 1; i <= num ; i++) {
             suma += i;
 
         }
