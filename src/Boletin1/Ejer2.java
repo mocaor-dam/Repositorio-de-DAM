@@ -1,3 +1,5 @@
+package Boletin1;
+
 import java.util.Scanner;
 
 public class Ejer2 {
