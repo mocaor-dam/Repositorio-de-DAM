@@ -1,4 +1,5 @@
-import java.sql.SQLOutput;
+package Boletin1;
+
 import java.util.Scanner;
 
 public class Contraseñavalida {
