@@ -10,7 +10,7 @@ public class Ejer7 {
         System.out.println("Introduce " +num+ " numeros");
         double suma = 0;
 
-        for (int i = 1; i <= num; i++) {
+        for (int i = 1; i < num + 1; i++) {
             System.out.println("Introduce el " +i+ " numero:");
             int num1 = sc.nextInt();
             suma += num1;
