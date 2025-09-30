@@ -19,14 +19,13 @@ public class Ejer8 {
             if (respuesta.equalsIgnoreCase("S")) {
                 System.out.println("Introduce un numero entonces");
                 num = sc.nextInt();
-                if (num < menor){
+                if (num < menor) {
                     menor = num;
                 }
             } else if (respuesta.equalsIgnoreCase("N")) {
                 System.out.println("Aqui termina");
-                continuar =  false;
-            }
-            else{
+                continuar = false;
+            } else {
                 System.out.println("El caracter debe ser S/N");
             }
 
