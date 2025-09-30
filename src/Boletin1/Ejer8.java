@@ -10,8 +10,8 @@ public class Ejer8 {
         boolean continuar = true;
         System.out.println("Introduzca un numero: ");
         int num = sc.nextInt();
+        int menor = num;
         while (continuar) {
-            int menor = num;
 
             System.out.println("¿Desea introducir más numeros?(S/N)");
             String respuesta = sc.next().toUpperCase();
@@ -30,8 +30,8 @@ public class Ejer8 {
                 System.out.println("El caracter debe ser S/N");
             }
 
-            System.out.println("El numero menor de los introducidos es " + menor);
         }
+        System.out.println("El numero menor de los introducidos es " + menor);
 
         sc.close();
     }

@@ -11,11 +11,11 @@ public class Ejer6 {
         int numB = sc.nextInt();
 
         int total = 0;
-        for (int i = 0; i < numB ; i++) {
+        for (int i = 0; i < Math.abs(numB); i++) {
             total += numA;
-
         }
-        System.out.println("El resultado es " + total);
+        if (numB < 0) total = -total;
+        System.out.println("El resultado es " + total );
 
     }
 }
