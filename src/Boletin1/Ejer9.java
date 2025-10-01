@@ -1,9 +1,9 @@
 import java.util.Scanner;
 
 public class Ejer9 {
-    static void main(String[] args) {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String textoDivisores = "";
+        String texto = "";
         int num;
         do {
             System.out.println("Introduce un numero");
@@ -13,18 +13,18 @@ public class Ejer9 {
         for (int i = 1; i < num; i++) {
             if (num % i == 0) {
                 suma += i;
-                if (textoDivisores.isEmpty()) {
-                    textoDivisores = textoDivisores + i;
+                if (texto.isEmpty()) {
+                    texto = texto + i;
                 } else {
-                    textoDivisores = textoDivisores + "+" + i;
+                    texto = texto + "+" + i;
                 }
             }
         }
         if (suma == num) {
-            System.out.println("El numero " + num + " es perfecto :D, porque es igual que " + textoDivisores + "=" + num);
+            System.out.println("El numero " + num + " es perfecto :D, porque es igual que " + texto + "=" + num);
 
         } else {
-            System.out.println("El numero " + num + " no es perfecto :(, ya que " + textoDivisores + "=" + suma);
+            System.out.println("El numero " + num + " no es perfecto :(, ya que " + texto + "=" + suma);
         }
 
 
