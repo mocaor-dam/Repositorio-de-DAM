@@ -10,7 +10,7 @@ public class Ejer9 {
             num = sc.nextInt();
         } while (num <= 0);
         int suma = 0;
-        for (int i = 1; i < num; i++) {
+        for (int i = 1; i <= num/2; i++) {
             if (num % i == 0) {
                 suma += i;
                 if (texto.isEmpty()) {

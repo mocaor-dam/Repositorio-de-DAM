@@ -3,13 +3,14 @@ package Boletin1;
 import java.util.Scanner;
 
 public class Ejer10 {
-    static void main(String[] args) {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int num = 0;
+
         do {
             System.out.println("Introduce un número entero positivo");
             num = sc.nextInt();
-            if (num<0){
+            if (num < 0) {
                 System.out.println("El numero debe ser positivo o cero >:(");
             }
         } while (num < 0);
