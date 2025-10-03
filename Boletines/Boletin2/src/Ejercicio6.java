@@ -26,7 +26,11 @@ public class Ejercicio6 {
         }
         System.out.println("aprobados = " + aprobados);
         System.out.println("suspensos = " + suspensos);
-        dou
+        double porcentajeAprobados = ((double) (aprobados / ALUMNOS_CLASE)) * 100;
+        System.out.println("porcentajeAprobados = " + porcentajeAprobados + " %");
+
+        double porcentajeSuspensos = (suspensos / ALUMNOS_CLASE) * 100;
+        System.out.println("porcentajeSuspensos = " + porcentajeSuspensos + " %");
 
     }
 }
