@@ -124,7 +124,22 @@ class MiEntradaSalida {
                 System.out.println("No tiene soluciones");
             }
             return 0;
-        }
-    }
 
+        }
+
+    }
+    public static int leerEnteroEnRango(String mensaje, int min, int max){
+    if (min > max){
+        //mensaje de error
+        System.out.println("El minimo es mayor que el maximo");
+        //TODO: Cambiar esto al ver las excepciones
+        return -1;
+    }
+    int num = leerEntero(mensaje);
+    while (num<min || num >max){
+        System.out.printf("El numero esta fuera del rango %d-%d", min, max);
+        num = leerEntero(mensaje);
+    }
+    return num;
+    }
 }

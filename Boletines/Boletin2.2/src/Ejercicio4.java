@@ -27,7 +27,27 @@ public class Ejercicio4 {
             num3 = sc.nextInt();
 
             segundos += num3;
-            minutos +
+            minutos += segundos / 60;
+            segundos = segundos % 60;
+
+            minutos += num2;
+            hora += minutos / 60;
+            minutos = minutos % 60;
+
+            hora += num;
+            int dias = 0;
+            boolean cambioDia = false;
+            if (hora >= 24){
+                dias = hora / 24;
+                hora = hora%24;
+                cambioDia = true;
+            }
+        System.out.printf("La hora resultante es: %02d:%02d:%02d", hora, minutos, segundos);
+            if (cambioDia){
+                System.out.printf(" y han pasado %d Dias", dias);
+
+            }
+        System.out.println();
 
 
     }
