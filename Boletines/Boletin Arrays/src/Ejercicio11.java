@@ -1,5 +1,9 @@
 import java.util.Arrays;
 
+/**
+ * Crea un método que acepte 2 arrays, y devuelva un nuevo array con los elementos
+ * que ambos arrays tienen en común.
+ */
 public class Ejercicio11 {
     static void main(String[] args) {
         int[] array1 = {10, 42, 74, 32, 61, 93, 22};
@@ -10,7 +14,7 @@ public class Ejercicio11 {
     public static boolean encuentraElelemento(int[] array, int valorEncontrado) {
         for (int elemento : array) {
             if (elemento == valorEncontrado) { // le damos una condicion del elemento dentro  del array si esta o no esta
-                return true; //  en todo caso de que esté  devuelve verdadero
+                return true; // entodo caso de que esté  devuelve verdadero
             }
         }
         return false; // en caso de que no está  devuelve falso
