@@ -14,7 +14,7 @@ public class Ejercicio9 {
      * no es simétrica, pues no cumple dicha propiedad.
      */
     static void main(String[] args) {
-        int[][] matriz = {{1, 2, 1}, {1, 2, 3}};
+        int[][] matriz = {{1, 2, 1}, {1, 2, 1}};
         System.out.println("Aqui la matriz");
         MiEntradaSalida.imprimirMatriz(matriz);
         if (comprobarEjeX(matriz)){
