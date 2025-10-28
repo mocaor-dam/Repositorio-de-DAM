@@ -13,12 +13,20 @@ public class Ejercicio10 {
      * 2 1 3
      * no es simétrica, pues no cumple dicha propiedad.
      */
-        public static boolean esSimetricaY(int[][] matriz) {
-            int numFilas = matriz.length;
-            int numColumnas = matriz[0].length;
-            for (int i = 0; i < numFilas; i++) {
-                for (int j = 0; j < numColumnas / 2; j++) {
-                    if (matriz[i][j] != matriz[i][numColumnas - 1 - j]) {
+    public static void main(String[] args) {
+        int[][] matrizSimetrica = {{1, 3, 0, 3, 1}, {4, 2, 7, 2, 4}, {6, 1, 9, 1, 6}, {0, 8, 8, 8, 0}};
+
+        // Llamada al metodo y mensaje descriptivo
+        if (esSimetricaY(matrizSimetrica)) {
+            System.out.println("La matriz es simétrica respecto al eje Y.");
+        } else {
+            System.out.println("La matriz NO es simétrica respecto al eje Y.");
+        }
+    }
+    public static boolean esSimetricaY(int[][] matriz) {
+            for (int i = 0; i < matriz.length; i++) {
+                for (int j = 0; j < matriz[0].length  / 2; j++) {
+                    if (matriz[i][j] != matriz[i][matriz[0].length - 1 - j]) {
                         return false;
                     }
                 }
@@ -26,15 +34,6 @@ public class Ejercicio10 {
             return true;
         }
 
-        public static void main(String[] args) {
-            int[][] matrizSimetrica = {{1, 3, 0, 3, 1}, {4, 2, 7, 2, 4}, {6, 1, 9, 1, 6}, {0, 8, 8, 8, 0}};
 
-            // Llamada al metodo y mensaje descriptivo
-            if (esSimetricaY(matrizSimetrica)) {
-                System.out.println("La matriz es simétrica respecto al eje Y.");
-            } else {
-                System.out.println("La matriz NO es simétrica respecto al eje Y.");
-            }
-        }
-    }
+}
 

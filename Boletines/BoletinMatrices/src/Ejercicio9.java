@@ -14,20 +14,19 @@ public class Ejercicio9 {
      * no es simétrica, pues no cumple dicha propiedad.
      */
     static void main(String[] args) {
-        int[][] matriz = {{1, 2, 1}, {1, 2, 1}};
+        int[][] matriz = {{1, 2, 1}, {4, 2, 4}, {4, 2, 4}, {1, 2, 1}};
         System.out.println("Aqui la matriz");
         MiEntradaSalida.imprimirMatriz(matriz);
-        if (comprobarEjeX(matriz)){
+        if (comprobarEjeX(matriz)) {
             System.out.println("La matriz es simetrica en funcion de su eje X, porque si invirtiesemos el orden en el que leemos las filas, la matriz se veria igual");
-        }
-        else {
+        } else {
             System.out.println("La matriz no es simetrica");
         }
 
     }
 
     public static boolean comprobarEjeX(int[][] matriz) {
-        for (int i = 0; i < matriz.length; i++) {
+        for (int i = 0; i < matriz.length/2; i++) {
             for (int j = 0; j < matriz[i].length; j++) {
                 if (matriz[i][j] != matriz[(matriz.length - 1) - i][j]) {
                     return false;
