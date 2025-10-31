@@ -43,63 +43,41 @@ public class Ejercicio2Examen2020 {
         boolean tieneMalaHierba = hayMalaHierba(jardin, fila, col);
         boolean tieneGusano = hayGusano(jardin, fila, col);
 
-        // Esta es la lógica correcta
-        // 1. Debe tener agua Y
-        // 2. Debe tener abeja Y
-        // 3. (No debe tener mala hierba O debe tener un gusano)
 
         if (tieneAgua && tieneAbeja && (!tieneMalaHierba || tieneGusano)) {
             return true;
         }
 
         return false;
-}
-
-
-public static boolean hayAgua(int[][] jardin, int fil, int col) {
-    for (int i = fil - 1; i <= fil + 1; i++) {  //Dentro del rango de filas y columnas detecta las adyacentes incluidas las diagonales
-        for (int j = col - 1; j <= col + 1; j++) {
-            if (i >= 0 && i < jardin.length && j >= 0 && j < jardin[0].length && jardin[i][j] == AGUA) {
-                return true;
+    }
+    //Creamos un metodo en el que creamos lo que vamos a hacer en el resto de metodos para que solo tengamos que llamar a buscaElemento y ya
+    public static boolean buscaElemento(int[][] jardin, int fil, int col, int rango, int elemento) {
+        for (int i = fil - rango; i <= fil + rango; i++) {  //Dentro del rango de filas y columnas detecta las adyacentes incluidas las diagonales
+            for (int j = col - rango; j <= col + rango; j++) {
+                if (i >= 0 && i < jardin.length && j >= 0 && j < jardin[0].length && jardin[i][j] == elemento) {
+                    return true;
+                }
             }
         }
+        return false;
     }
-    return false;
 
-}
 
-public static boolean hayAbeja(int[][] jardin, int fil, int col) {
-    for (int i = fil - 3; i <= fil + 3; i++) {  //Dentro del rango de filas y columnas detecta las adyacentes incluidas las diagonales
-        for (int j = col - 3; j <= col + 3; j++) {
-            if (i >= 0 && i < jardin.length && j >= 0 && j < jardin[0].length && jardin[i][j] == ABEJA) {
-                return true;
-            }
-        }
+    public static boolean hayAgua(int[][] jardin, int fil, int col) {
+        return buscaElemento(jardin, fil, col, 1, AGUA);
+
     }
-    return false;
 
-}
-
-public static boolean hayMalaHierba(int[][] jardin, int fil, int col) {
-    for (int i = fil - 1; i <= fil + 1; i++) {  //Dentro del rango de filas y columnas detecta las adyacentes incluidas las diagonales
-        for (int j = col - 1; j <= col + 1; j++) {
-            if (i >= 0 && i < jardin.length && j >= 0 && j < jardin[0].length && jardin[i][j] == MALAHIERBA) {
-                return true;
-            }
-        }
+    public static boolean hayAbeja(int[][] jardin, int fil, int col) {
+        return buscaElemento(jardin, fil, col, 3, ABEJA);
     }
-    return false;
-}
 
-public static boolean hayGusano(int[][] jardin, int fil, int col) {
-    for (int i = fil - 1; i <= fil + 1; i++) {  //Dentro del rango de filas y columnas detecta las adyacentes incluidas las diagonales
-        for (int j = col - 1; j <= col + 1; j++) {
-            if (i >= 0 && i < jardin.length && j >= 0 && j < jardin[0].length && jardin[i][j] == GUSANO) {
-                return true;
-            }
-        }
+    public static boolean hayMalaHierba(int[][] jardin, int fil, int col) {
+        return buscaElemento(jardin, fil, col, 1, MALAHIERBA);
     }
-    return false;
-}
+
+    public static boolean hayGusano(int[][] jardin, int fil, int col) {
+        return buscaElemento(jardin, fil, col, 1, GUSANO);
+    }
 }
 
