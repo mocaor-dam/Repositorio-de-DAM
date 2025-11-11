@@ -25,12 +25,11 @@ public class Practica1 {
                 electoresDemocratas += electores[i];
                 //Sumamos uno al contador de Estados
                 estadosDemocratas++;
-                if (electores[i] > maxElectoresD){
+                if (electores[i] > maxElectoresD) {
                     maxElectoresD = electores[i];
                     indiceMaxD = i;
                 }
-            }
-            else {
+            } else {
                 electoresRepublicanos += electores[i];
                 estadosRepublicanos++;
                 if (electores[i] > maxElectoresR) {
@@ -43,20 +42,20 @@ public class Practica1 {
             totalVotosRepublicanos += votoRepublicano[i];
 
         }
-        // --- AQUI VA EL CÓDIGO DE IMPRESIÓN DE RESULTADOS ---
 
-        // 1. Determinar el Presidente (por electores)
+
+        // Determinar el Presidente (por electores)
         if (electoresDemocratas > electoresRepublicanos) {
             System.out.println("\nEl Presidente elegido es del partido Demócrata");
         } else {
             System.out.println("\nEl Presidente elegido es del partido Republicano");
         }
-        // 2. Mostrar electores totales (RA 1a)
+        // Mostrar electores totales (RA 1a)
         System.out.println("Electores totales Demócratas: " + electoresDemocratas);
         System.out.println("Electores totales Republicanos: " + electoresRepublicanos);
 
-        // 3. Determinar el partido más votado (por voto popular)
-        if (totalVotosDemocratas>totalVotosRepublicanos){
+        // Determinar el partido más votado (por voto popular)
+        if (totalVotosDemocratas > totalVotosRepublicanos) {
             System.out.printf("El partido mas votado es el Demócrata con %d votos. \n", totalVotosDemocratas);
         } else {
             System.out.printf("El partido mas votado es el Republicano con %d votos \n", totalVotosRepublicanos);
@@ -72,8 +71,8 @@ public class Practica1 {
             System.out.printf("El estado que más electores aportó al partido Demócrata fue %s con %d electores.\n", estados[indiceMaxD], maxElectoresD);
         }
         //Resultado Republicano
-        if (indiceMaxR != -1){
+        if (indiceMaxR != -1) {
             System.out.printf("El estado que más electores aportó al partido Republicano fue %s con %d electores.\n", estados[indiceMaxR], maxElectoresR);
         }
     }
-    }
+}
