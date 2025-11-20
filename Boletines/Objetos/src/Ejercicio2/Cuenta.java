@@ -36,7 +36,7 @@ public class Cuenta {
 
     public int getNumIngresos() {
         return numIngresos;
-    }
+    } 
 
     public void setNumIngresos(int numIngresos) {
         this.numIngresos = numIngresos;
@@ -44,6 +44,15 @@ public class Cuenta {
 
     public double getSaldo() {
         return saldo;
+    }
+
+    @Override
+    public String toString() {
+        return "Cuenta{" +
+                "saldo=" + saldo +
+                ", numRetiradas=" + numRetiradas +
+                ", numIngresos=" + numIngresos +
+                '}';
     }
 
     public void reintegro(double dineroRetirado) throws CuentaException {
@@ -65,4 +74,9 @@ public class Cuenta {
         this.saldo += dineroIngreso;
         this.numIngresos++;
     }
+    public void consulta(){
+        System.out.println(toString());
+    }
+
+
 }
