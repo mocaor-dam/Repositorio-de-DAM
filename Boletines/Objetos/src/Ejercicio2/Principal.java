@@ -23,7 +23,7 @@ public class Principal {
         do {
             mostarMenu();
 
-            opcion = MiEntradaSalida2.solicitarEnteroEnRango("Escribe una opción: ", 0, 2);
+            opcion = MiEntradaSalida2.solicitarEnteroEnRango("Escribe una opción: ", 0, 3);
 
             switch (opcion) {
                 case 1:
@@ -48,6 +48,8 @@ public class Principal {
                         System.out.println(e.getMessage());
                     }
                     break;
+                case 3:
+                    c.consulta();
             }
         } while (opcion != 0);
     }
@@ -57,5 +59,6 @@ public class Principal {
         System.out.println("0. Salir");
         System.out.println("1. Retirar");
         System.out.println("2. Ingresar");
+        System.out.println("3. Consulta");
     }
 }
