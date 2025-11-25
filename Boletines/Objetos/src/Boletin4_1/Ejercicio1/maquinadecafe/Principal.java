@@ -10,7 +10,6 @@ public class Principal {
         System.out.print("Introduce el dinero inicial del monedero: ");
         double dineroInicial = sc.nextDouble();
         Maquina maquina = new Maquina(dineroInicial,50,50,100,50);
-
         boolean encendida = true;
         while (encendida) {
             System.out.println("\nMenú:");
@@ -57,6 +56,7 @@ public class Principal {
                     break;
                 case 5:
                     encendida = false;
+                    break;
             }
         }
     }

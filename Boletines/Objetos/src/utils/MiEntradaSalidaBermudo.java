@@ -2,7 +2,7 @@ package utils;
 
 import java.util.Scanner;
 
-public class MiEntradaSalida2 {
+public class MiEntradaSalidaBermudo {
         // 1. El Scanner se hace PRIVADO para protegerlo.
         // Solo esta clase puede usarlo.
         private static Scanner sc = new Scanner(System.in);

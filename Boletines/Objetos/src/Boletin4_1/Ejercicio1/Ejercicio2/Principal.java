@@ -1,14 +1,14 @@
 package Boletin4_1.Ejercicio1.Ejercicio2;
 
 import Exceptions.CuentaException;
-import utils.MiEntradaSalida2;
+import utils.MiEntradaSalidaBermudo;
 
 public class Principal {
     public static void main(String[] args) {
         Cuenta c = null;
         while (c == null) {
             try {
-                double saldoInicial = MiEntradaSalida2.solicitarEnteroPositivo("Introduce el saldo inicial");
+                double saldoInicial = MiEntradaSalidaBermudo.solicitarEnteroPositivo("Introduce el saldo inicial");
                 c = new Cuenta(saldoInicial);
             } catch (CuentaException e) {
                 System.out.println(e.getMessage());
@@ -20,11 +20,11 @@ public class Principal {
         do {
             mostarMenu();
 
-            opcion = MiEntradaSalida2.solicitarEnteroEnRango("Escribe una opción: ", 0, 3);
+            opcion = MiEntradaSalidaBermudo.solicitarEnteroEnRango("Escribe una opción: ", 0, 3);
 
             switch (opcion) {
                 case 1:
-                    int dineroARetirar = MiEntradaSalida2.solicitarEnteroPositivo("¿Cuánto dinero desea retirar?");
+                    int dineroARetirar = MiEntradaSalidaBermudo.solicitarEnteroPositivo("¿Cuánto dinero desea retirar?");
                     try {
                         c.reintegro(dineroARetirar);
                         System.out.printf("Su saldo actual es de %.2f%n", c.getSaldo());
@@ -37,7 +37,7 @@ public class Principal {
 
                 break;
                 case 2:
-                    int dineroAIngresar = MiEntradaSalida2.solicitarEnteroPositivo("¿Cuánto dinero desea ingresar?");
+                    int dineroAIngresar = MiEntradaSalidaBermudo.solicitarEnteroPositivo("¿Cuánto dinero desea ingresar?");
                     try {
                         c.ingreso(dineroAIngresar);
                         System.out.printf("Su saldo actual es de %.2f%n", c.getSaldo());
