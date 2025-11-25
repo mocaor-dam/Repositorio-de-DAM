@@ -1,4 +1,4 @@
-package Ejercicio2;
+package Boletin4_1.Ejercicio1.Ejercicio2;
 
 import Exceptions.CuentaException;
 

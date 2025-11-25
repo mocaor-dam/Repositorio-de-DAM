@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact name="EntornoDeDesarrollo:jar2">
+    <output-path>$PROJECT_DIR$/out/artifacts/EntornoDeDesarrollo_jar2</output-path>
+    <root id="root">
+      <element id="archive" name="EntornoDeDesarrollo.jar">
+        <element id="module-output" name="EntornoDeDesarrollo" />
+      </element>
+    </root>
+  </artifact>
+</component>

@@ -1,4 +1,4 @@
-package Ejercicio1;
+package Boletin4_1.Ejercicio1.Ejercicio1;
 
 import utils.MiEntradaSalida;
 

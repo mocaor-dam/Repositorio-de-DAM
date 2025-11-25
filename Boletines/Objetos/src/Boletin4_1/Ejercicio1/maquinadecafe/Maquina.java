@@ -1,4 +1,4 @@
-package maquinadecafe;
+package Boletin4_1.Ejercicio1.maquinadecafe;
 
 import Exceptions.MaquinaDeCafeException;
 
@@ -9,9 +9,9 @@ public class Maquina {
     private int depVasos;
     private double monedero;
     //Constantes
-    public final double PRECIOCAFE = 1;
-    public final double PRECIOLECHE = 0.8;
-    public final double PRECIOCAFECONLECHE = 1.5;
+    public static final double PRECIOCAFE = 1;
+    public static final double PRECIOLECHE = 0.8;
+    public static final double PRECIOCAFECONLECHE = 1.5;
 
     private final int MAXDOSISCAFE;
     private final int MAXDOSISLECHE;
@@ -57,7 +57,7 @@ public class Maquina {
         double cambio = pago - PRECIOCAFE;
 
         if (!hayCambio(cambio)) {
-            throw new MaquinaDeCafeException("No tienes cambio.");
+            throw new MaquinaDeCafeException("No hay suficiente cambio en la maquina, prueba a introducir una menor cantidad.");
         }
 
         depCafe--;
@@ -69,7 +69,7 @@ public class Maquina {
     }
 
     private boolean hayCambio(double cambio) {
-        return true;
+        return monedero >= cambio;
     }
 
     //Servir Leche

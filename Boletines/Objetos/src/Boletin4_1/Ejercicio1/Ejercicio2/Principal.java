@@ -1,10 +1,7 @@
-package Ejercicio2;
+package Boletin4_1.Ejercicio1.Ejercicio2;
 
-import Ejercicio2.Cuenta;
 import Exceptions.CuentaException;
 import utils.MiEntradaSalida2;
-
-import java.util.Scanner;
 
 public class Principal {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package maquinadecafe;
+package Boletin4_1.Ejercicio1.maquinadecafe;
 
 import Exceptions.MaquinaDeCafeException;
 
@@ -14,9 +14,9 @@ public class Principal {
         boolean encendida = true;
         while (encendida) {
             System.out.println("\nMenú:");
-            System.out.println("1. Servir café solo (1 euro)");
-            System.out.println("2. Servir leche (0.8 euros)");
-            System.out.println("3. Servir café con leche (1.5 euros)");
+            System.out.println("1. Servir café solo ("+Maquina.PRECIOCAFE+"€)");
+            System.out.println("2. Servir leche ("+Maquina.PRECIOLECHE+"€)");
+            System.out.println("3. Servir café con leche ("+ Maquina.PRECIOCAFECONLECHE+"€)");
             System.out.println("4. Consultar estado máquina");
             System.out.println("5. Apagar máquina y salir");
             System.out.print("Elige una opción: ");
