@@ -11,12 +11,13 @@ import java.util.IllegalFormatCodePointException;
 public class Producto {
 
     private int codigo;
+    private static int contador = 1;
     private String descripcion;
     private int precioSinIva;
     public static double IVA = 0.2;
 
     public Producto(int codigo, String descripcion, int precioSinIva) {
-        this.codigo = codigo;
+        this.codigo = contador++;
         this.descripcion = descripcion;
         this.precioSinIva = precioSinIva;
     }
@@ -45,18 +46,31 @@ public class Producto {
         this.precioSinIva = precioSinIva;
     }
 
-    public void setPrecioSinIva(double precioSinIva) throws ProductoException{
-        if (precioSinIva < 0){
+    public void setPrecioSinIva(double precioSinIva) throws ProductoException {
+        if (precioSinIva < 0) {
             throw new ProductoException("Error el precio no puede ser menor que 0");
         }
     }
 
-    public void cambiarPrecioSinIva(double nuevoPrecio) throws ProductoException{
-        if (nuevoPrecio<0){
+    public void cambiarPrecioSinIva(double nuevoPrecio) throws ProductoException {
+        if (nuevoPrecio < 0) {
             throw new ProductoException("Error: no puede ser negativo");
         }
     }
 
-    public void getIva()
+    public void cambiarDescripcion(String descripcion) throws ProductoException{
+        if (descripcion.isEmpty()){
+            throw new ProductoException("No puede estar vacia.");
+        }
+    }
+    public void setIVA(double nuevoIva){
+        IVA = nuevoIva;
+    }
+    public static double getIVA(){
+        return IVA;
+    }
 
+    public double precioVenta(){
+        return precioSinIva * (1+IVA);
+    }
 }
