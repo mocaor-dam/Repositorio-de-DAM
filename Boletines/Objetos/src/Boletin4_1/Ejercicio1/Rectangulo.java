@@ -1,4 +1,4 @@
-package Boletin4_1.Ejercicio1.Ejercicio1;
+package Boletin4_1.Ejercicio1;
 
 public class Rectangulo {
     private int longitud;

@@ -1,4 +1,4 @@
-package Boletin4_1.Ejercicio1.maquinadecafe;
+package Boletin4_1.maquinadecafe;
 
 import Exceptions.MaquinaDeCafeException;
 
