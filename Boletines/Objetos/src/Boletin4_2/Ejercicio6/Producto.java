@@ -10,16 +10,17 @@ import java.util.IllegalFormatCodePointException;
  */
 public class Producto {
 
-    private int codigo;
     private static int contador = 1;
-    private String descripcion;
-    private int precioSinIva;
-    public static double IVA = 0.2;
+    private static double IVA = 0.2;
 
-    public Producto(int codigo, String descripcion, int precioSinIva) {
+    private int codigo;
+    private String descripcion;
+    private double precioSinIva;
+
+    public Producto(String descripcion, double precioSinIva)throws ProductoException {
         this.codigo = contador++;
         this.descripcion = descripcion;
-        this.precioSinIva = precioSinIva;
+        setPrecioSinIva(precioSinIva);
     }
 
     public int getCodigo() {
@@ -38,34 +39,17 @@ public class Producto {
         this.descripcion = descripcion;
     }
 
-    public int getPrecioSinIva() {
+    public double getPrecioSinIva() {
         return precioSinIva;
-    }
-
-    public void setPrecioSinIva(int precioSinIva) {
-        this.precioSinIva = precioSinIva;
     }
 
     public void setPrecioSinIva(double precioSinIva) throws ProductoException {
         if (precioSinIva < 0) {
             throw new ProductoException("Error el precio no puede ser menor que 0");
         }
+        this.precioSinIva = precioSinIva;
     }
 
-    public void cambiarPrecioSinIva(double nuevoPrecio) throws ProductoException {
-        if (nuevoPrecio < 0) {
-            throw new ProductoException("Error: no puede ser negativo");
-        }
-    }
-
-    public void cambiarDescripcion(String descripcion) throws ProductoException{
-        if (descripcion.isEmpty()){
-            throw new ProductoException("No puede estar vacia.");
-        }
-    }
-    public void setIVA(double nuevoIva){
-        IVA = nuevoIva;
-    }
     public static double getIVA(){
         return IVA;
     }
