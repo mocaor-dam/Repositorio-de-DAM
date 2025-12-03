@@ -1,4 +1,4 @@
-package boletin4_3.ejercicio1;
+package Boletin4_3.ejercicio1;
 
 import Exceptions.BarajaException;
 
