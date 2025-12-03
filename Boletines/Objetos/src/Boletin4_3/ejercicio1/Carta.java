@@ -1,20 +1,20 @@
-package Boletin4_3.ejercicio1;
+package boletin4_3.ejercicio1;
 
 public class Carta {
     private String palo;
-    private String numero;
+    private int numero;
 
-    public Carta(String palo, String numero) {
-        this.palo = palo;
+    public Carta(String palo, int numero) {
+        setPalo(palo);
+        setNumero(numero);
+    }
+
+    private void setNumero(int numero) {
         this.numero = numero;
     }
 
-    public String getPalo() {
-        return palo;
-    }
-
-    public String getNumero() {
-        return numero;
+    private void setPalo(String palo) {
+        this.palo = palo;
     }
 
     @Override

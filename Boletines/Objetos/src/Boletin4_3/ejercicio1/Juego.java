@@ -1,22 +1,35 @@
-package Boletin4_3.ejercicio1;
+package boletin4_3.ejercicio1;
+
+import exceptions.BarajaException;
 
 public class Juego {
-    private Carta[] baraja;
-    private int posicionActual = 0;
-    private static final String[] PALOS = {"Espadas", "Oros", "Copas", "Bastos"};
-    private static final String[] NUMEROS = {"1", "2", "3", "4", "5", "6", "7", "10", "11", "12"};
 
-    public Juego() {
-        crearBaraja();
-    }
+    public static void main(String[] args) {
+        Baraja barajaEspañola = new Baraja();
+        barajaEspañola.mostrarBaraja();
+        System.out.println();
+        barajaEspañola.barajar();
+        System.out.println();
+        barajaEspañola.mostrarBaraja();
+        System.out.println();
+        System.out.println("En la baraja quedan " + barajaEspañola.cartasRestantes());
 
-    private void crearBaraja() {
-        baraja = new Carta[40];
-        int index = 0;
-        for (String palo : PALOS) {
-            for (String numero : NUMEROS) {
-                baraja[index++] = new Carta(palo, numero);
-            }
+        try {
+            barajaEspañola.repartir(4, 7);
+            System.out.println("¡Hecho!");
+        } catch (BarajaException e) {
+            System.out.println(e.getMessage());
         }
+        System.out.println();
+        System.out.println("En la baraja quedan " + barajaEspañola.cartasRestantes());
+        System.out.println();
+        try {
+            barajaEspañola.repartir(4, 7);
+            System.out.println("¡Hecho!");
+        } catch (BarajaException e) {
+            System.out.println(e.getMessage());
+        }
+
+
     }
 }
