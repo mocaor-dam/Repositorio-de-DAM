@@ -20,6 +20,7 @@ public class Pelicula {
         this.recaudacion = recaudacion;
         this.cadena = cadena;
         this.etiquetas = etiquetas;
+
     }
 
     public String getEtiquetas() {
@@ -46,6 +47,17 @@ public class Pelicula {
         this.añoDeEstreno = añoDeEstreno;
     }
 
-
-
+    @Override
+    public String toString() {
+        return "Pelicula{" +
+                "titulo='" + titulo + '\'' +
+                ", añoDeEstreno=" + añoDeEstreno +
+                ", director='" + director + '\'' +
+                ", presupuesto=" + presupuesto +
+                ", recaudacion=" + recaudacion +
+                ", cadena='" + cadena + '\'' +
+                ", etiquetas='" + etiquetas + '\'' +
+                ", valoracion=" + valoracion +
+                '}';
+    }
 }

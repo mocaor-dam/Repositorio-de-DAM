@@ -2,53 +2,66 @@ package Examenes;
 
 import Exceptions.PeliculaException;
 
-import java.util.Arrays;
-
 public class Biblioteca {
-    public final static int TAMAÑO=20;
+    public final static int TAMANO = 20;
+    private Pelicula[] peliculas = new Pelicula[TAMANO];
 
-    private Pelicula[] peliculas = new Pelicula[TAMAÑO];
-
-    public void añadirPelicula(Pelicula pelicula) throws PeliculaException {
+    // Añadir película
+    public void anadirPelicula(Pelicula p) throws PeliculaException {
         for (int i = 0; i < peliculas.length; i++) {
-            if (peliculas[i] == null) {
-                peliculas[i] = pelicula;
-                return;
+            if (peliculas[i] == null) { // Buscamos el primer hueco vacío
+                peliculas[i] = p;
+                return; // Ya la añadimos, nos salimos del metodo
             }
         }
+        // Si termina el bucle y no encontró hueco, lanzamos error
+        throw new PeliculaException("La biblioteca está llena, no caben más películas.");
     }
-    public String buscarPeliculaPorEtiquetas() throws  PeliculaException {
-        StringBuilder devolver = new StringBuilder();
-        for (int i = 0; i < peliculas.length; i++) {
-            String[] etiquetas = peliculas[i].getEtiquetas().split(",");
-            for (int j = 0; j < etiquetas.length; j++) {
-                if (etiquetas[j].equals(etiquetas)) {
-                    devolver.append(peliculas[i].getTitulo());
 
+    // Consultar (Mostrar todas)
+    public String mostrarTodas() {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < peliculas.length; i++) {
+            if (peliculas[i] != null) { // IMPORTANTE: Solo mostrar las que existen
+                sb.append(peliculas[i].toString()).append("\n");
+            }
+        }
+        if (sb.isEmpty()) return "La biblioteca está vacía.";
+        return sb.toString();
+    }
+
+    // Buscar por etiquetas
+    public String buscarPorEtiquetas(String etiquetaBusqueda) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < peliculas.length; i++) {
+            if (peliculas[i] != null) {
+                // contains devuelve true si la etiqueta está dentro del texto
+                if (peliculas[i].getEtiquetas().contains(etiquetaBusqueda)) {
+                    sb.append(peliculas[i].getTitulo()).append("\n");
                 }
             }
         }
-        if (devolver.toString().isEmpty()) {
-            throw new PeliculaException("Pelicula no encontrada con esas etiquetas");
-        }
-        return devolver.toString();
+        return !sb.isEmpty() ? sb.toString() : "No se encontraron películas con esa etiqueta.";
     }
 
-    public String buscarPeliculaPorTitulo(String titulo) throws PeliculaException {
+    // Buscar por título (Devuelve todos los datos)
+    public String buscarPorTitulo(String titulo) {
         for (int i = 0; i < peliculas.length; i++) {
-            if (titulo.equals(peliculas[i].getTitulo())) {
-                return peliculas[i].getTitulo();
+            if (peliculas[i] != null && peliculas[i].getTitulo().equalsIgnoreCase(titulo)) {
+                return peliculas[i].toString();
             }
         }
-        throw new PeliculaException("Esa pelicula no esta en la biblioteca");
+        return "Película no encontrada.";
     }
 
-    public String buscarPeliculaPorPresupuestoMaximo(double)
-
-    @Override
-    public String toString() {
-        return "Biblioteca{" +
-                "peliculas=" + Arrays.toString(peliculas) +
-                '}';
+    // Buscar por presupuesto máximo
+    public String buscarPorPresupuesto(double presupuestoMax) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < peliculas.length; i++) {
+            if (peliculas[i] != null && peliculas[i].getPresupuesto() <= presupuestoMax) {
+                sb.append(peliculas[i].getTitulo()).append("\n");
+            }
+        }
+        return sb.length() > 0 ? sb.toString() : "No hay películas con ese presupuesto o menos.";
     }
 }
