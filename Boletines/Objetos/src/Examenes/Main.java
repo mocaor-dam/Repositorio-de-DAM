@@ -13,17 +13,17 @@ public class Main {
 
 
         while (peliculeando){
-            int opcion = 1;
             System.out.println("Bienvenido a el CINE\n");
-            System.out.println("Aqui tienes lo que puedes hacer\n");
-            System.out.println("\t1. Añadir pelicula\n");
-            System.out.println("\t2. Consultar biblioteca\n");
-            System.out.println("\t3. Buscar pelicula por etiquetas\n");
-            System.out.println("\t4. Buscar pelicula por titulo\n");
-            System.out.println("\t5. Buscar pelicula con presupuesto máximo\n");
-            System.out.println("\t6. Salir\n");
+            int opcion = 1;
             while(!opcionEscogida){
                 try {
+                    System.out.println("Aqui tienes lo que puedes hacer\n");
+                    System.out.println("\t1. Añadir pelicula");
+                    System.out.println("\t2. Consultar biblioteca");
+                    System.out.println("\t3. Buscar pelicula por etiquetas");
+                    System.out.println("\t4. Buscar pelicula por titulo");
+                    System.out.println("\t5. Buscar pelicula con presupuesto máximo");
+                    System.out.println("\t6. Salir");
                     opcion = MiEntradaSalida.leerEnteroRango("Introduce que quieres hacer (1-6)",1,6);
                     opcionEscogida = true;
                 } catch (MiEntradaSalidaException e) {
@@ -36,9 +36,15 @@ public class Main {
                     Pelicula nuevaPelicula = crearPelicula(); // Creamos el objeto
                     biblioteca.anadirPelicula(nuevaPelicula); // Lo guardamos
                     System.out.println("¡Película añadida con éxito!");
+
+                    try {
+                        biblioteca.anadirPelicula(nuevaPelicula);
+                    } catch (PeliculaException e) {
+                        System.out.println(e.getMessage());
+                    }
                     break;
                 case 2:
-                    System.out.println(biblioteca.mostrarTodas());
+                    System.out.println(biblioteca.consultarBiblioteca());
                     break;
                 case 3:
                     String etiqueta = MiEntradaSalida.leerLinea("Introduce la etiqueta a buscar:");
@@ -59,5 +65,18 @@ public class Main {
             }
         }
     }
+    public static Pelicula crearPelicula() {
+        System.out.println("--- Nueva Película ---");
+        String titulo = MiEntradaSalida.leerLinea("Introduce el título:");
+        int año = MiEntradaSalida.leerEntero("Introduce el año:");
+        String director = MiEntradaSalida.leerLinea("Introduce el director:");
+        double presupuesto = MiEntradaSalida.leerDouble("Introduce el presupuesto:");
+        double recaudacion = MiEntradaSalida.leerDouble("Introduce la recaudación:");
+        String sinopsis = MiEntradaSalida.leerLinea("Introduce la sinopsis:");
+        String etiquetas = MiEntradaSalida.leerLinea("Introduce etiquetas:");
 
+        return new Pelicula(titulo, año, director, presupuesto, recaudacion, sinopsis, etiquetas);
+    }
 }
+
+

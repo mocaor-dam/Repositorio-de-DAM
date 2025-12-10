@@ -33,7 +33,8 @@ public class Persona2 {
         if (buzonMensajesEnviados[4] != null) {
             throw new MensajeException("El Buzon esta lleno");
         }
-        Mensaje mensaje = new Mensaje(asunto, cuerpo, this, destinatario, LocalDateTime);
+        LocalDateTime LocalDate;
+        Mensaje mensaje = new Mensaje(asunto, cuerpo, this, destinatario, LocalDateTime.now());
         mensaje.setRemitente(this);
         mensaje.setFechaEnvio(LocalDateTime.now());
         System.out.println("Se ha enviado correctamente");

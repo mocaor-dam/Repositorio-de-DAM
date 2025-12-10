@@ -31,6 +31,10 @@ public class Pelicula {
         return titulo;
     }
 
+    public double getPresupuesto() {
+        return presupuesto;
+    }
+
     public double setValoracion() {
        double valoracion = (recaudacion*5)/presupuesto;
        if (valoracion>10.0){
@@ -38,6 +42,7 @@ public class Pelicula {
        }
         return valoracion;
     }
+
 
     public void setAñoDeEstreno(int añoDeEstreno) throws PeliculaException {
         if (añoDeEstreno<0){

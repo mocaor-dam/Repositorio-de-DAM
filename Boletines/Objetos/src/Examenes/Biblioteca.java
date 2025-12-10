@@ -3,8 +3,8 @@ package Examenes;
 import Exceptions.PeliculaException;
 
 public class Biblioteca {
-    public final static int TAMANO = 20;
-    private Pelicula[] peliculas = new Pelicula[TAMANO];
+    public final static int TAMAÑO = 20;
+    private Pelicula[] peliculas = new Pelicula[TAMAÑO];
 
     // Añadir película
     public void anadirPelicula(Pelicula p) throws PeliculaException {
@@ -19,14 +19,17 @@ public class Biblioteca {
     }
 
     // Consultar (Mostrar todas)
-    public String mostrarTodas() {
+    public String consultarBiblioteca() {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < peliculas.length; i++) {
             if (peliculas[i] != null) { // IMPORTANTE: Solo mostrar las que existen
                 sb.append(peliculas[i].toString()).append("\n");
             }
         }
-        if (sb.isEmpty()) return "La biblioteca está vacía.";
+        if (sb.isEmpty()) {
+            return "La biblioteca está vacía.";
+
+        }
         return sb.toString();
     }
 
@@ -62,6 +65,6 @@ public class Biblioteca {
                 sb.append(peliculas[i].getTitulo()).append("\n");
             }
         }
-        return sb.length() > 0 ? sb.toString() : "No hay películas con ese presupuesto o menos.";
+        return !sb.isEmpty() ? sb.toString() : "No hay películas con ese presupuesto o menos.";
     }
 }
