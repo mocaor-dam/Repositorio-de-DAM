@@ -1,4 +1,4 @@
-package Examenes;
+package Examenes.Avion3;
 
 import Exceptions.AvionException;
 
