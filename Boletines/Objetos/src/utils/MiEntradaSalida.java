@@ -2,7 +2,6 @@ package utils;
 
 import Exceptions.MiEntradaSalidaException;
 
-
 import java.time.DateTimeException;
 import java.time.LocalDate;
 import java.util.Scanner;
@@ -84,7 +83,7 @@ public class MiEntradaSalida{
             // Si se lanza la excepción, informamos al usuario de su error.
             catch (NumberFormatException e) {
                 // 2. Mensaje de error específico.
-                System.out.println("Error: Debe introducir un número entero.");
+                System.out.println("Error: Debe introducir un número decimal.");
             }
 
         }
@@ -250,7 +249,7 @@ public class MiEntradaSalida{
      * @param mensaje mensaje a mostrar
      * @param array   lista a recorrer
      */
-    public static void mostrarOpcionesSinNulos(String mensaje, String[] array) {
+    public static void mostrarOpcionesSinNulos(String mensaje, Object[] array) {
         System.out.println(mensaje);
         int posicion = 1;
         for (int i = 0; i < array.length; i++) {
@@ -273,12 +272,9 @@ public class MiEntradaSalida{
 
     }
 
-    public static void main(String[] args) {
-        try {
-            LocalDate fecha = MiEntradaSalida.fecha("lol");
-            System.out.println(fecha);
-        } catch (MiEntradaSalidaException e) {
-            System.out.println(e.getMessage());
-        }
+    public static char leerChar(String mensaje) throws MiEntradaSalidaException {
+        String texto = leerTexto(mensaje);
+        if (texto.length() != 1) {throw new MiEntradaSalidaException("Debes introducir un caracter.");}
+        return texto.charAt(0);
     }
 }

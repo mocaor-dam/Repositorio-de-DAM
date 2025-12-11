@@ -1,25 +1,36 @@
 package Examenes.Avion;
 
 import Exceptions.AvionException;
-
 public class Deposito {
-    private final int CAPACIDAD_MAXIMA;
-    private double cantidadActual;
+    public final double CAPACIDAD_MAX;
+    private double capacidadActual;
 
-    public Deposito(double cantidadActual, int capacidadMaxima) throws AvionException {
-        if (capacidadMaxima <= 0) { throw new AvionException("Capacidad maxima debe ser positivo"); }
-        this.cantidadActual = cantidadActual;
-        this.CAPACIDAD_MAXIMA = capacidadMaxima;
+    public Deposito(double capacidadMax, double capacidadActual) throws AvionException {
+        if (capacidadMax <= 0){
+            throw new AvionException("Capacidad máxima invalida");
+        }
+        this.CAPACIDAD_MAX = capacidadMax;
+        setCapacidadActual(capacidadActual);
     }
 
-    public void setCantidadActual(double cantidadActual) throws AvionException {
-        if (cantidadActual < 0){
-            throw new AvionException("Cantidad debe ser positivo");
+    public void setCapacidadActual(double capacidadActual) throws AvionException {
+        if (capacidadActual < 0){
+            throw new AvionException("La capacidad actual...");
         }
-        if (cantidadActual > CAPACIDAD_MAXIMA){
-            throw new AvionException("Cantidad debe ser menor que la Maxima");
-        }
-        this.cantidadActual = cantidadActual;
+        if (capacidadActual > CAPACIDAD_MAX){throw new AvionException("La capacidad actual maxima invalida");}
+        this.capacidadActual = capacidadActual;
     }
+
+    public double getCapacidadActual() {
+        return capacidadActual;
+    }
+
+    @Override
+    public String toString() {
+        return "Deposito{" +
+                "capacidadActual=" + capacidadActual +
+                '}';
+    }
+
 
 }

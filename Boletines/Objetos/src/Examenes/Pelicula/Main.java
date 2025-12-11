@@ -1,4 +1,4 @@
-package Examenes;
+package Examenes.Pelicula;
 
 import Exceptions.MiEntradaSalidaException;
 import Exceptions.PeliculaException;
