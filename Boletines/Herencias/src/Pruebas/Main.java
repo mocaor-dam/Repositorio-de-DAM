@@ -1,3 +1,5 @@
+package Pruebas;
+
 public class Main {
     static void main(String[] args) {
         Figura f =  new Circulo(3);
